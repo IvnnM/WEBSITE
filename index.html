@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LoginOrSignup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <style>
+
+      .left-container {
+          width: 50%;
+          float: left;
+          background-color: #f0f0f0; 
+          padding: 20px; 
+          box-sizing: border-box; 
+      }
+      .right-container {
+          width: 50%; 
+          float: left;
+          background-color: #e0e0e0; 
+          padding: 20px;
+          box-sizing: border-box; 
+      }
+      .clearfix::after {
+          content: "";
+          clear: both;
+          display: table;
+      }
+
+      .tabs a {
+        color: black;
+      }
+      .tabs .nav-item:hover  a {
+        color: green;
+      }
+      .tabs .nav-item:hover {
+        cursor: pointer;
+        background-color: white;
+        border-top-left-radius: 7px; 
+      }
+
+  </style>
+
+
+  </head>
+  <body>
+    <div class="container-fluid" style="background-color: rgb(199, 164, 9);">
+      <div class="row">
+        <div class="col">
+          <div class="d-flex justify-content-between align-items-center">
+              <h1>TITLE</h1>
+              <div class="d-flex align-items-center">
+                  <img src="your-image-url.jpg" alt="Image Description">
+              </div>
+          </div>
+      </div>
+ 
+      <div class="tabs">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="createAccountTab">Create Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+      </div>
+
+      </div>
+    </div>
+    
+    <!-- Your modal code -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Create your account</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="resetForm()"></button>
+              </div>
+              <div class="modal-body">
+                  <!-- Modal content here -->
+                  
+                  <form class="row" id="myForm" action="signup.php" method="post">
+                      <div class="row">
+                        <div class="col-md-7">
+                          <label for="" class="form-label">Full name</label>
+                          <input type="text" name="fullname" class="form-control" autocomplete="off" required>
+                        </div>
+                      
+                        <div class="col-md-5">
+                          <label for="" class="form-label">SR code</label>
+                          <input type="text" name="srcode" class="form-control" autocomplete="off" required>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <label for="" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="21-11111@g.batstate-u.edu.ph" autocomplete="off" required>
+                      </div>
+                      
+                      <div class="col-md-12">
+                        <label for="" class="form-label">Username</label>
+                        <input type="text" name="username" id="username" class="form-control" autocomplete="off" required>
+                        <span id="availability"></span>
+                      
+                      </div>
+
+                      <div class="col-md-12">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" autocomplete="off" minlength="8" required>
+                      </div>
+                      
+                    <div class="col-md-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" required>
+                        <label class="form-check-label">
+                          Agree to terms and conditions
+                        </label>                  
+                      </div>
+                    </div>
+
+                    <div class="modal-footer">
+                      <div class="col-12">
+                        <button class="btn btn-primary" type="submit" name="submit">Submit form</button>
+                      </div>
+                    </div>
+                </form>
+              </div>
+          </div>
+      </div>
+    </div>
+
+
+  <div class="container-md" style="padding-top: 10px;">
+
+    <div class="left-container">
+        <!-- Content for the left container -->
+        <h2>Left Container</h2>
+        <p>This is the content of the left container.</p>  
+    </div>
+
+    <div class="right-container">   <!-- RIGHT -->
+      <h3 class="mb-5">Sign in</h3>
+
+
+      <div class="form-floating mb-4">
+        <input type="text" class="form-control" id="" placeholder="Username">
+        <label for="floatingInput">Username</label>
+      </div>
+      <div class="form-floating mb-4">
+        <input type="password" class="form-control" id="" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+
+      <!-- Checkbox -->
+      <div class="form-check d-flex justify-content-start mb-4">
+        <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+        <label class="form-check-label" for="form1Example3"> Remember password </label>
+      </div>
+
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+
+    </div>
+
+    <!-- Clear the float to prevent layout issues -->
+    <div class="clearfix"></div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+        // click event on the "Create Account" tab to Open modal
+        $('#createAccountTab').click(function() {
+            $('#staticBackdrop').modal('show');
+        });
+    });
+  </script>
+  <script>
+    //reset the modal inputs
+    function resetForm() {
+        document.getElementById("myForm").reset();
+    }
+  </script>
+
+  <script>
+  $(document).ready(function () {
+  $('#username').on('input', function () {
+    var username = $('#username').val();
+    $.ajax({
+      url: "check.php",
+      method: "POST",
+      data: { username: username },
+      dataType: "text",
+      success: function (html) {
+        $('#availability').html(html);
+        if (html.includes('Username available')) {
+          $('#myForm').off("submit"); // Remove the submit event handler
+        } else {
+          $('#myForm').submit(function (event) {
+            event.preventDefault(); // Prevent form submission if the username is not available
+          });
+        }
+      }
+    });
+  });
+});
+
+
+
+
+
+  </script>
+
+</body>
+</html>
